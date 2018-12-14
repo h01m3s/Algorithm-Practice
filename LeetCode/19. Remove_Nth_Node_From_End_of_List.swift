@@ -9,6 +9,9 @@
  *     }
  * }
  */
+
+ // Time Complexity: O(n)
+ // Space Complexity: O(1)
 class Solution {
     func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
         
