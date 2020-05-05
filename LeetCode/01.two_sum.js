@@ -6,18 +6,16 @@
  */
 
 var twoSum = function (nums, target) {
-  if (nums.length <= 1) return null;
-
-  const obj = {};
+  const map = {};
 
   for (let i = 0; i < nums.length; i++) {
     const num = nums[i];
-    if (!obj.hasOwnProperty(num)) {
-      obj[target - num] = i;
+    if (num in map) {
+      return [map[num], i];
     } else {
-      return [obj[num], i];
+      map[target - num] = i;
     }
   }
 
-  return null;
+  return [];
 };
