@@ -21,22 +21,19 @@
 // };
 
 const maxProfit = function (prices) {
-  if (prices.length <= 1) return 0;
   let minPrice = 99999;
-  let max = 0;
   let profit = 0;
 
   for (let i = 0; i < prices.length; i++) {
     const price = prices[i];
-    if (price < minPrice && i < prices.length - 1) {
+    if (price < minPrice) {
       minPrice = price;
-      max = price;
+    } else if (price - minPrice > profit) {
+      profit = price - minPrice;
     }
-    if (price > max) max = price;
-    profit = max - minPrice > profit ? max - minPrice : profit;
   }
 
   return profit;
 };
 
-console.log(maxProfit([7, 6, 4, 3, 1]));
+console.log(maxProfit([]));
