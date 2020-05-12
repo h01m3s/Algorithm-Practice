@@ -24,16 +24,10 @@ const maxProfit = function (prices) {
   let minPrice = 99999;
   let profit = 0;
 
-  for (let i = 0; i < prices.length; i++) {
-    const price = prices[i];
-    if (price < minPrice) {
-      minPrice = price;
-    } else if (price - minPrice > profit) {
-      profit = price - minPrice;
-    }
+  for (let price of prices) {
+    if (price < minPrice) minPrice = price;
+    profit = Math.max(price - minPrice, profit);
   }
 
   return profit;
 };
-
-console.log(maxProfit([]));
