@@ -13,13 +13,11 @@ var letterCasePermutation = function (S) {
     }
 
     if (S[i].match(/[a-z]/i)) {
-      if (S[i] === S[i].toLowerCase()) {
-        recur(text + S[i].toUpperCase(), i + 1);
-      } else {
-        recur(text + S[i].toLowerCase(), i + 1);
-      }
+      recur(text + S[i].toUpperCase(), i + 1);
+      recur(text + S[i].toLowerCase(), i + 1);
+    } else {
+      recur(text + S[i], i + 1);
     }
-    recur(text + S[i], i + 1);
   };
 
   recur();
