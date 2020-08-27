@@ -25,7 +25,7 @@ const isSubPalindrome = (str, l, r) => {
 };
 
 // Time Complexity: O(n^3)
-// Space Complexity: O(n)
+// Space Complexity: O(1)
 var longestPalindrome = function (s) {
   const len = s.length;
   if (len < 2) return s;
